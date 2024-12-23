@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "699fc339-eb9d-4056-aad0-0934f927a7b6",
+		"name": "Books Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32187326",
+		"_collection_link": "https://planetary-spaceship-178838.postman.co/workspace/myspace~80b4ddc8-edd3-4b5d-a7e5-3a483305602c/collection/32187326-699fc339-eb9d-4056-aad0-0934f927a7b6?action=share&source=collection_link&creator=32187326"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/books",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"This is a title\",\r\n    \"author\": \"This is author\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/books",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register a new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"confirmPassword\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/register",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/login",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzY3YmRmMmM2Y2EwYjJmMTg0YTk2NmIiLCJpYXQiOjE3MzQ4NTIxOTN9.9JNVCZOm-SioEO_6_jsUZMxo9o92Ks8GGNqmNJsM0oQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/user-info",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"user-info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASEURL",
+			"value": "http://localhost:8073",
+			"type": "string"
+		}
+	]
+}

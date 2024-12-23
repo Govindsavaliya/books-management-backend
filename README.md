@@ -94,6 +94,7 @@ Before setting up the project, ensure you have the following installed:
 ├── index.js
 ├── package.json
 ├── vercel.json
+├── booksManagement.postman_collection.json
 └── README.md
 
 ```
